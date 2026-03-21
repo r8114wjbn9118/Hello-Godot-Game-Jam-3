@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b8tvwo6als4vk"]
+
+[ext_resource type="Texture2D" uid="uid://bwjmaub57wbdx" path="res://image/bakground/date.png" id="1_6yo5u"]
+[ext_resource type="PackedScene" uid="uid://cev16g6q6uawh" path="res://card/base.tscn" id="1_wlubc"]
+[ext_resource type="Resource" uid="uid://bjsg5emaiic1c" path="res://card/data/computer.tres" id="3_u42qe"]
+
+[node name="Node2D" type="Node2D" unique_id=1850809433]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=645687632]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_6yo5u")
+
+[node name="crad" parent="." unique_id=1395496138 instance=ExtResource("1_wlubc")]
+data = ExtResource("3_u42qe")

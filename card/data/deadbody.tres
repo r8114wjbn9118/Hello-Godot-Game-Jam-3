@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://ba06kauqgthjh"]
+
+[ext_resource type="Texture2D" uid="uid://cm2bxk4uku4cl" path="res://image/卡牌/backtime.png" id="1_75euo"]
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="1_u85t4"]
+[ext_resource type="Texture2D" uid="uid://b7e8uy83di4wi" path="res://image/卡牌/1/deadbody.png" id="2_v85rj"]
+
+[resource]
+script = ExtResource("1_u85t4")
+front_image = ExtResource("2_v85rj")
+back_image = ExtResource("1_75euo")
+description = "是​她的​屍體​... ​已​經​有​點味道​飄​出來​了​"
+left_desc = "調查​一下​其他​地方​吧"
+right_desc = "調查​一下​其他​地方​吧"
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

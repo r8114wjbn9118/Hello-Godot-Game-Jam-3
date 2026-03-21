@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c0fix1bwnt0ts"]
+
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="1_2uem2"]
+
+[resource]
+script = ExtResource("1_2uem2")
+show_name = "抽屜"
+description = "這​是​他​的​桌子，​ ​也​許能​在​這裡​找到​一些​線索​"
+left_desc = "算​了​吧(​離​開)"
+right_desc = "調查​一下抽屜​"
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

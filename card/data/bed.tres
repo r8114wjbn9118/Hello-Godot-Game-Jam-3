@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bpgbudqqlty1y"]
+
+[ext_resource type="Texture2D" uid="uid://cm2bxk4uku4cl" path="res://image/卡牌/backtime.png" id="1_73u15"]
+[ext_resource type="Texture2D" uid="uid://bcbc7r32w0nnk" path="res://image/卡牌/1/bed.png" id="2_b6qnc"]
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="3_5k8fx"]
+
+[resource]
+script = ExtResource("3_5k8fx")
+show_name = "床"
+front_image = ExtResource("2_b6qnc")
+back_image = ExtResource("1_73u15")
+description = "這​是​青梅​竹馬​的​床，​
+​也​許能​在​這裡​找到​一些​線索​"
+left_desc = "算​了​吧(​離​開)"
+right_desc = "調查​一下​床底​"
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

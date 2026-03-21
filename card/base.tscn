@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://cev16g6q6uawh"]
+
+[ext_resource type="Script" uid="uid://cmt1rmakmummo" path="res://card/card.gd" id="1_vebcd"]
+[ext_resource type="Shader" uid="uid://bdgcke5tli5tt" path="res://card/card.gdshader" id="2_70p1f"]
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="2_qf0wo"]
+[ext_resource type="Texture2D" uid="uid://cm2bxk4uku4cl" path="res://image/卡牌/backtime.png" id="4_crj6n"]
+
+[sub_resource type="Resource" id="Resource_r2x22"]
+script = ExtResource("2_qf0wo")
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kahh8"]
+shader = ExtResource("2_70p1f")
+
+[sub_resource type="Animation" id="Animation_70p1f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("back:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("front:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("back:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(0, 0, 1719, 0, 1719, 2451, 0, 2451)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("front:polygon")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(0, 0, 1719, 0, 1719, 2451, 0, 2451)]
+}
+
+[sub_resource type="Animation" id="Animation_s6f6h"]
+resource_name = "open"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("back:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(1e-05, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("front:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(171.9, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("back:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(0, 0, 1719, 0, 1719, 2451, 0, 2451), PackedVector2Array(859, 612, 1719, 0, 1719, 2451, 859, 1839), PackedVector2Array(859, 612, 1719, 0, 1719, 2451, 859, 1839)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("front:polygon")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(0, 0, 859.5, 612, 859.5, 1839, 0, 2451), PackedVector2Array(0, 0, 859.5, 612, 859.5, 1839, 0, 2451), PackedVector2Array(0, 0, 1719, 0, 1719, 2451, 0, 2451)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_crj6n"]
+_data = {
+&"RESET": SubResource("Animation_70p1f"),
+&"open": SubResource("Animation_s6f6h")
+}
+
+[node name="card" type="Node2D" unique_id=1395496138]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_vebcd")
+data = SubResource("Resource_r2x22")
+
+[node name="front" type="Polygon2D" parent="." unique_id=2107863810]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_kahh8")
+scale = Vector2(1e-05, 1)
+polygon = PackedVector2Array(0, 0, 1719, 0, 1719, 2451, 0, 2451)
+uv = PackedVector2Array(0, 0, 1719, 0, 1719, 2451, 0, 2451)
+
+[node name="back" type="Polygon2D" parent="." unique_id=496415598]
+unique_name_in_owner = true
+texture = ExtResource("4_crj6n")
+polygon = PackedVector2Array(0, 0, 1719, 0, 1719, 2451, 0, 2451)
+uv = PackedVector2Array(0, 0, 1719, 0, 1719, 2451, 0, 2451)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1590322388]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_crj6n")
+autoplay = &"RESET"
