@@ -10,5 +10,5 @@
 
 [resource]
 script = ExtResource("1_ttofe")
-card_deck = Array[ExtResource("1_n31sv")]([ExtResource("2_kkwb8"), ExtResource("3_828ca"), ExtResource("4_4glwd"), ExtResource("5_stoc2"), ExtResource("6_xhy6x")])
+card_deck = Array[ExtResource("1_n31sv")]([ExtResource("2_kkwb8"), ExtResource("3_828ca"), ExtResource("4_4glwd"), ExtResource("5_stoc2"), ExtResource("6_xhy6x"), null])
 metadata/_custom_type_script = "uid://u17nhqahhlyt"

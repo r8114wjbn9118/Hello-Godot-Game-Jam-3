@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("1_u85t4")
+show_name = "死者"
 front_image = ExtResource("2_v85rj")
 back_image = ExtResource("1_75euo")
 description = "是​她的​屍體​... ​已​經​有​點味道​飄​出來​了​"

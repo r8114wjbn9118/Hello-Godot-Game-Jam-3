@@ -11,10 +11,15 @@ extends Resource
 
 ## 敘述
 @export_multiline var description:String
-## 左邊描述
-@export_multiline var left_desc:String
-## 右邊描述
-@export_multiline var right_desc:String
-
 ## 解鎖條件
 @export var limit:String
+
+@export_group("left")
+## 左邊描述
+@export_multiline var left_desc:String
+@export var left_action:Dictionary
+
+@export_group("right")
+## 右邊描述
+@export_multiline var right_desc:String
+@export var right_action:Dictionary
