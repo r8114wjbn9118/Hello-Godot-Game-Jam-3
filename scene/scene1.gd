@@ -66,12 +66,16 @@ func start_user_action():
 
 func exit_card(to_left):
 	var tween = create_tween()
-	var pos = top_card.position.x + get_viewport().size.x / 3 * (-1 if to_left else 1)
-	tween.tween_property(top_card, "global_position.x", pos, 0.3)
+	var pos = Vector2(
+		top_card.global_position.x + get_viewport().size.x / 3 * (-1 if to_left else 1),
+		top_card.global_position.y
+		)
+	tween.tween_property(top_card, "global_position", pos, 1)
 	tween.tween_callback(reset_top_card_pos)
 	tween.tween_callback(next_card)
 
 func reset_top_card_pos():
 	if top_card:
+		card_deck.move_child(top_card, 1)
 		top_card.reset()
 	next_card()
