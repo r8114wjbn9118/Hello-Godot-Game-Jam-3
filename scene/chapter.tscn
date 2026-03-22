@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b8tvwo6als4vk"]
 
-[ext_resource type="Script" uid="uid://dax3qdack5poc" path="res://script/scene.gd" id="1_tfyvu"]
+[ext_resource type="Script" uid="uid://dax3qdack5poc" path="res://script/chapter.gd" id="1_tfyvu"]
 [ext_resource type="Texture2D" uid="uid://ck2oufnyewa52" path="res://image/shadow_circle.png" id="3_tfyvu"]
 [ext_resource type="Texture2D" uid="uid://bwjmaub57wbdx" path="res://image/bakground/date.png" id="3_vyjpp"]
 [ext_resource type="PackedScene" uid="uid://cev16g6q6uawh" path="res://card/card_base.tscn" id="4_1egux"]
 
 [node name="chapter" type="Node2D" unique_id=1850809433]
 script = ExtResource("1_tfyvu")
-default_level = 1
+default_level = 2
 
 [node name="background" type="Sprite2D" parent="." unique_id=37134626]
 unique_name_in_owner = true
@@ -80,12 +80,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 426.0
-offset_top = 498.0
-offset_right = 726.0
-offset_bottom = 648.0
+offset_left = 576.0
+offset_top = 528.0
+offset_right = 577.0
+offset_bottom = 583.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 40
-text = "qwerqwerqwer
-asdfasdfsadf"

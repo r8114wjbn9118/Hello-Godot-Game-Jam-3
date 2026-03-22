@@ -13,7 +13,7 @@ width = 1719
 [resource]
 script = ExtResource("1_1xpi2")
 front_image = SubResource("GradientTexture2D_qrd0j")
-appear_action = {
+appear_action = [
 "start_effect": "chapter_3_A_dead"
-}
+]
 metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

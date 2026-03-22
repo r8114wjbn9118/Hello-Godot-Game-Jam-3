@@ -1,11 +1,21 @@
+class_name ChapterScene
 extends Node2D
 
+signal update_text_finished
+signal show_card_finished
+
 @export var default_level:int
+@export var new_card_udpate_interval:float = 0.05
 
 @onready var card_deck = %card_deck
 
 var top_card:Card = null
 
+var new_card_desc
+var update_desc_timer:float = 0.0
+var update_desc_index:int = 0
+
+var new_card_opacity = null
 
 enum STATE {
 	LOAD,
@@ -14,9 +24,9 @@ enum STATE {
 	USER_ACTION,
 	END
 }
-var state = STATE.LOAD
+var state:STATE = STATE.LOAD
 
-var card_max_rotation = 30
+var card_max_rotation:float = 30
 
 func _ready() -> void:
 	if not Data.current_level:
@@ -47,7 +57,32 @@ func _input(event: InputEvent) -> void:
 				Data.set_card_action(action)
 				start_exit_card()
 
+func _process(delta: float) -> void:
+	update_text(delta)
+	
+func set_text(text:String):
+	new_card_desc = text.split()
+	%card_desc.text = ""
+	%card_desc.modulate.a = 1
+
+func update_text(delta: float):
+	if new_card_desc:
+		update_desc_timer = (update_desc_timer + delta)
+		while update_desc_timer > new_card_udpate_interval:
+			update_desc_timer -= new_card_udpate_interval
+			%card_desc.text += new_card_desc[update_desc_index]
+			update_desc_index += 1
+			if update_desc_index >= len(new_card_desc):
+				new_card_desc = null
+				update_desc_index = 0
+				update_desc_timer = 0
+				update_text_finished.emit(self)
+
+
+
 func init():
+	%background.texture = Data.current_level.background
+	
 	%left_shadow.modulate.a = 0
 	%right_shadow.modulate.a = 0
 	%left_desc.text = ""
@@ -93,16 +128,17 @@ func update_screen_effect(distance):
 func update_screen_data():
 	var data = top_card.data
 	
-	%left_shadow.modulate = data.left_shadow_color
+	%left_shadow.modulate = Color(data.left_shadow_color, 0)
 	%left_desc.text = data.left_desc
 	%left_desc.modulate = Color(data.left_desc_color, 0)
 
-	%right_shadow.modulate = data.right_shadow_color
+	%right_shadow.modulate = Color(data.right_shadow_color, 0)
 	%right_desc.text = data.right_desc
 	%right_desc.modulate = Color(data.right_desc_color, 0)
 	
-	%card_desc.text = data.description
-	%card_desc.modulate = data.desc_color
+	%card_desc["theme_override_colors/font_color"] = data.desc_color
+	%card_desc["theme_override_colors/font_outline_color"] = data.desc_outline_color
+	set_text(data.description)
 
 func start_user_action():
 	state = STATE.USER_ACTION
@@ -119,16 +155,29 @@ func exit_card_anim(t):
 	if top_card.rotation < 0:
 		pos = -pos
 	top_card.global_position.x += pos
-	%left_shadow.modulate.a = lerp(%left_shadow.modulate.a, 0.0, t / 10)
-	%left_desc.modulate.a = lerp(%left_desc.modulate.a, 0.0, t / 10)
-	%right_shadow.modulate.a = lerp(%right_shadow.modulate.a, 0.0, t / 10)
-	%right_desc.modulate.a = lerp(%right_desc.modulate.a, 0.0, t / 10)
-	%card_desc.modulate.a = lerp(%card_desc.modulate.a, 0.0, t / 10)
+
+	var weight = t / 3
+	%left_shadow.modulate.a = lerp(%left_shadow.modulate.a, 0.0, weight)
+	%left_desc.modulate.a = lerp(%left_desc.modulate.a, 0.0, weight)
+	%right_shadow.modulate.a = lerp(%right_shadow.modulate.a, 0.0, weight)
+	%right_desc.modulate.a = lerp(%right_desc.modulate.a, 0.0, weight)
+	%card_desc.modulate.a = lerp(%card_desc.modulate.a, 0.0, weight)
 
 func reset_top_card_pos():
 	if top_card:
 		card_deck.move_child(top_card, 0)
 		top_card.reset()
+
+
+func change_card_opacity(opacity:float):
+	var tween = create_tween()
+	var new_color = Color(1,1,1,opacity)
+	tween.tween_property(%card_deck, "modulate", new_color, 1)
+	tween.tween_callback(show_card_finished.emit)
+func show_card():
+	change_card_opacity(1)
+func hide_card():
+	change_card_opacity(0)
 
 
 

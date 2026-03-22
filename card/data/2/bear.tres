@@ -9,11 +9,7 @@ show_name = "泰迪​"
 front_image = ExtResource("1_bie20")
 description = "有​她​最愛​的​泰迪​"
 left_desc = "返回"
-left_action = {
-"insert_card": "deadbody"
-}
+left_action = [["insert_card", "deadbody"]]
 right_desc = "返回"
-right_action = {
-"insert_card": "deadbody"
-}
+right_action = [["insert_card", "deadbody"]]
 metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

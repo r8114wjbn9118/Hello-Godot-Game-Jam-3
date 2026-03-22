@@ -9,13 +9,10 @@ script = ExtResource("3_cl2gb")
 show_name = "死者"
 front_image = ExtResource("2_r3jrm")
 back_image = ExtResource("1_xfu1g")
-description = "是​她的​屍體​... ​已​經​有​點味道​飄​出來​了​"
+description = "是​她的​屍體​...
+​已​經​有​點味道​飄​出來​了​"
 left_desc = "調查​一下​抽屜​吧"
-left_action = {
-"insert_card": "desk"
-}
+left_action = [["insert_card", "desk"]]
 right_desc = "調查​一下​床吧"
-right_action = {
-"insert_card": "bed"
-}
+right_action = [["insert_card", "bed"]]
 metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

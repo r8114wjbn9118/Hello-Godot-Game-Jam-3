@@ -12,8 +12,9 @@ extends Resource
 ## 敘述
 @export_multiline var description:String
 @export var desc_color:Color = Color.BLACK
+@export var desc_outline_color:Color = Color(0, 0, 0, 0)
 
-@export var appear_action:Dictionary
+@export var appear_action:Array
 
 ## 解鎖條件
 @export var limit:String
@@ -22,12 +23,12 @@ extends Resource
 ## 左邊描述
 @export_multiline var left_desc:String
 @export var left_desc_color:Color = Color.BLACK
-@export var left_action:Dictionary
+@export var left_action:Array
 @export var left_shadow_color:Color = Color.WHITE
 
 @export_group("right")
 ## 右邊描述
 @export_multiline var right_desc:String
 @export var right_desc_color:Color = Color.WHITE
-@export var right_action:Dictionary
+@export var right_action:Array
 @export var right_shadow_color:Color = Color.BLACK

@@ -1,6 +1,7 @@
 class_name Level
 extends Resource
 
+@export var background:Texture2D
 @export var card_deck:Array[CardData]
 
 var level_number = null
@@ -25,11 +26,10 @@ func get_next_card():
 		used_card.append(card)
 	return card
 
-func insert_card(target:String):
+func insert_card(target:String, level:int = level_number):
 	var card_data_path = "{0}/{1}/{2}.tres".format([
-		Data.CARD_DATA_DIR, level_number, target
+		Data.CARD_DATA_DIR, level, target
 	])
-	print(card_data_path, ResourceLoader.exists(card_data_path))
 	if ResourceLoader.exists(card_data_path):
 		var card_data:CardData = load(card_data_path)
 		if card_data:
@@ -37,6 +37,5 @@ func insert_card(target:String):
 
 func back_last_card():
 	var card = used_card.get(len(used_card) - 2)
-	printt(card, used_card)
 	if card:
 		card_list.append(card)

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bq2hhtweeerwi"]
+
+[ext_resource type="Texture2D" uid="uid://cm2bxk4uku4cl" path="res://image/卡牌/backtime.png" id="1_7e0bb"]
+[ext_resource type="Texture2D" uid="uid://bcbc7r32w0nnk" path="res://image/卡牌/1/bed.png" id="2_8p00d"]
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="3_q38gi"]
+
+[resource]
+script = ExtResource("3_q38gi")
+show_name = "床"
+front_image = ExtResource("2_8p00d")
+back_image = ExtResource("1_7e0bb")
+description = "沒​有​東西"
+left_desc = "返回"
+left_action = [["insert_card", "bed"]]
+right_desc = "返回"
+right_action = [["insert_card", "bed"]]
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

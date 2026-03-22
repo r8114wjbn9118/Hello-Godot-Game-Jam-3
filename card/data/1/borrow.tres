@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://ciumoosldi127"]
 
-[ext_resource type="Texture2D" uid="uid://b4spj72rqssi" path="res://image/卡牌/1/borrow.png" id="1_4evsp"]
-[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="1_y6m1g"]
+[ext_resource type="Texture2D" uid="uid://b4spj72rqssi" path="res://image/卡牌/1/borrow.png" id="1_ou8oi"]
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="2_ae8yo"]
 
 [resource]
-script = ExtResource("1_y6m1g")
+script = ExtResource("2_ae8yo")
 show_name = "借據"
-front_image = ExtResource("1_4evsp")
-description = "有​一​張​借據​在​裡面​"
+front_image = ExtResource("1_ou8oi")
+appear_action = [["set_text", "有​一​張​借據​在​裡面"], ["sleep", 1.0], ["set_text", "...​看來人​就​是​你​殺​的​"], ["sleep", 1.0], ["start_effect", "chapter_2_B_end"], ["chapter_unlock", 2]]
 metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

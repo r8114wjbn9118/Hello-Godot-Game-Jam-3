@@ -9,8 +9,6 @@ show_name = "與​青梅吵架"
 front_image = ExtResource("1_e55sk")
 description = "「你​太​不​可​理喻​了！​我​要​回去​了」​"
 left_desc = "攔住​她"
-left_action = {
-"insert_card": "red"
-}
+left_action = [["insert_card", "red"]]
 right_desc = "看着她走"
 metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

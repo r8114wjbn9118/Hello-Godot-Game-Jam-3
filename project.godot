@@ -26,6 +26,11 @@ SaveData="*uid://bceijtroodyqm"
 Action="*uid://cberi0du6kvui"
 Effect="*uid://blroubg7uxwak"
 
+[display]
+
+window/size/initial_position_type=0
+window/stretch/mode="viewport"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -9,11 +9,10 @@ script = ExtResource("3_0s77h")
 show_name = "床"
 front_image = ExtResource("2_jivdv")
 back_image = ExtResource("1_erxe4")
-description = "這​是​青梅​竹馬​的​床，​
+description = "這​是​她的​床，​
 ​也​許能​在​這裡​找到​一些​線索​"
 left_desc = "算​了​吧(​離​開)"
-left_action = {
-"back_last_card": null
-}
+left_action = [["insert_card", "deadbody"]]
 right_desc = "調查​一下​床底​"
+right_action = [["insert_card", "bear"]]
 metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

@@ -20,58 +20,70 @@ func update_data():
 	if %back:
 		%back.texture = data.back_image if data.back_image else default_back_image
 
-enum STATE {
-	CLOSE,
-	OPEN,
-}
-var current_state:STATE = STATE.CLOSE
+var is_open:bool = false
+var action_type = ""
+var action_list = []
 
 func _ready() -> void:
 	update_data()
+	Action.action_finished.connect(_on_action_finished)
 
-func can_action(action_dict:Dictionary):
-	return not action_dict.is_empty()
+func init_action_data():
+	action_type = ""
+	action_list = []
+
+func can_action():
+	return not action_list.is_empty()
 
 func start_action():
-	var action = Data.card_action
-	if action == "left":
-		run_action(data.left_action)
-	elif action == "right":
-		run_action(data.right_action)
+	action_type = Data.card_action
+	if action_type == "left":
+		action_list = data.left_action
+	elif action_type == "right":
+		action_list = data.right_action
 	Data.set_card_action()
-	action_finished.emit(action)
+	run_action()
 
 func start_appear_action():
-	run_action(data.appear_action)
-	action_finished.emit("appear")
+	action_type = "appear"
+	action_list = data.appear_action
+	run_action()
 
-func run_action(action_dict:Dictionary):
-	if can_action(action_dict):
-		for action in action_dict.keys():
-			Action.call(action, action_dict.get(action))
+func run_action():
+	printt(action_type, action_list)
+	if action_type:
+		if can_action():
+			var action = action_list.pop_front()
+			Action.call(action[0], action[1])
+		else:
+			printt("action finished", action_type)
+			action_finished.emit(action_type)
+			init_action_data()
+
+func _on_action_finished(_action_name):
+	run_action()
 
 func reset():
 	position = Vector2(0, 0)
 	rotation = 0
 	%AnimationPlayer.play("RESET")
-	current_state = STATE.CLOSE
+	is_open = false
 
 func open():
-	if current_state != STATE.OPEN:
+	if not is_open:
 		%AnimationPlayer.play("open")
-		current_state = STATE.OPEN
+		is_open = true
 
 func close():
-	if current_state != STATE.CLOSE:
+	if is_open:
 		%AnimationPlayer.play_backwards("open")
-		current_state = STATE.CLOSE
+		is_open = false
 
 func switch():
-	match current_state:
-		STATE.CLOSE:
-			open()
-		STATE.OPEN:
-			close()
+	if is_open:
+		close()
+	else:
+		open()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

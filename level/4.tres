@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="Level" format=3 uid="uid://by0l0m3cai0wb"]
 
 [ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="1_8ssld"]
-[ext_resource type="Resource" uid="uid://ba06kauqgthjh" path="res://card/data/1/deadbody.tres" id="2_pvttm"]
+[ext_resource type="Texture2D" uid="uid://bwjmaub57wbdx" path="res://image/bakground/date.png" id="1_pvttm"]
 [ext_resource type="Script" uid="uid://u17nhqahhlyt" path="res://level/base.gd" id="3_r7no0"]
 
 [resource]
 script = ExtResource("3_r7no0")
-card_deck = Array[ExtResource("1_8ssld")]([ExtResource("2_pvttm")])
+background = ExtResource("1_pvttm")
+card_deck = Array[ExtResource("1_8ssld")]([null])
 metadata/_custom_type_script = "uid://u17nhqahhlyt"
