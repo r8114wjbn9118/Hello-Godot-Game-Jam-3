@@ -38,25 +38,23 @@ func can_action():
 func start_action():
 	action_type = Data.card_action
 	if action_type == "left":
-		action_list = data.left_action
+		action_list = data.left_action.duplicate_deep()
 	elif action_type == "right":
-		action_list = data.right_action
+		action_list = data.right_action.duplicate_deep()
 	Data.set_card_action()
 	run_action()
 
 func start_appear_action():
 	action_type = "appear"
-	action_list = data.appear_action
+	action_list = data.appear_action.duplicate_deep()
 	run_action()
 
 func run_action():
-	printt(action_type, action_list)
 	if action_type:
 		if can_action():
 			var action = action_list.pop_front()
 			Action.call(action[0], action[1])
 		else:
-			printt("action finished", action_type)
 			action_finished.emit(action_type)
 			init_action_data()
 

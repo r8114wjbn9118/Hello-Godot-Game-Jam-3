@@ -11,7 +11,7 @@ var SCENE = {
 var LEVEL = [null,
 	"uid://cfy8vvcqdcn5j",
 	"uid://citga58l7qqst",
-	"uid://cqnrleed5stgi",
+	"uid://ckrulvso1rtjr",
 	"uid://by0l0m3cai0wb",
 ]
 

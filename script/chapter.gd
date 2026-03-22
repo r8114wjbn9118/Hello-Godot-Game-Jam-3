@@ -59,8 +59,11 @@ func _input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	update_text(delta)
-	
+
 func set_text(text:String):
+	update_desc_index = 0
+	update_desc_timer = 0
+
 	new_card_desc = text.split()
 	%card_desc.text = ""
 	%card_desc.modulate.a = 1

@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="Level" format=3 uid="uid://cqnrleed5stgi"]
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://ckrulvso1rtjr"]
 
 [ext_resource type="Texture2D" uid="uid://bwjmaub57wbdx" path="res://image/bakground/date.png" id="1_5b20v"]
 [ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="1_vj0ib"]
-[ext_resource type="Resource" uid="uid://b0wargm84gx4m" path="res://card/data/3/quarrel.tres" id="2_vj0ib"]
 [ext_resource type="Script" uid="uid://u17nhqahhlyt" path="res://level/base.gd" id="3_36la1"]
 
 [resource]
 script = ExtResource("3_36la1")
 background = ExtResource("1_5b20v")
-card_deck = Array[ExtResource("1_vj0ib")]([ExtResource("2_vj0ib")])
 metadata/_custom_type_script = "uid://u17nhqahhlyt"

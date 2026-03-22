@@ -22,6 +22,7 @@ func init(n):
 
 func get_next_card():
 	var card = card_list.pop_back()
+	print(card, card_list)
 	if card:
 		used_card.append(card)
 	return card
