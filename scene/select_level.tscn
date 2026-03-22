@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://s1mfhgnatufn"]
+
+[ext_resource type="Script" uid="uid://cumob23k2tq7y" path="res://script/select_level.gd" id="1_kuypm"]
+[ext_resource type="Texture2D" uid="uid://0107okd12bm5" path="res://image/bakground/start.png" id="1_vf7qe"]
+[ext_resource type="Texture2D" uid="uid://bcr0csu262w35" path="res://image/立繪/A.png" id="2_kuypm"]
+[ext_resource type="Script" uid="uid://depagyas436ug" path="res://script/goto_chapter.gd" id="3_kuypm"]
+[ext_resource type="Texture2D" uid="uid://6bfc16hhxwxr" path="res://image/立繪/B.png" id="4_aduhs"]
+
+[node name="SelectLevel" type="Control" unique_id=1568538155]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kuypm")
+
+[node name="background" type="TextureRect" parent="." unique_id=669930815]
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_vf7qe")
+
+[node name="HBoxContainer" type="HSplitContainer" parent="." unique_id=1051610145]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offsets = PackedInt32Array(0, 0, 0)
+
+[node name="chapter1" type="Button" parent="HBoxContainer" unique_id=1477119438]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 520)
+layout_mode = 2
+size_flags_horizontal = 6
+script = ExtResource("3_kuypm")
+level = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/chapter1" unique_id=1429955586]
+layout_mode = 1
+offset_right = 273.0
+offset_bottom = 520.0
+texture = ExtResource("2_kuypm")
+
+[node name="Label" type="Label" parent="HBoxContainer/chapter1" unique_id=1036018596]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -100.0
+offset_right = 60.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 50
+text = "Day2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="chapter2" type="Button" parent="HBoxContainer" unique_id=1892010606]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 520)
+layout_mode = 2
+size_flags_horizontal = 6
+script = ExtResource("3_kuypm")
+level = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/chapter2" unique_id=1493046725]
+layout_mode = 0
+texture = ExtResource("4_aduhs")
+
+[node name="Label" type="Label" parent="HBoxContainer/chapter2" unique_id=1564981280]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -100.0
+offset_right = 60.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 50
+text = "Day1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="chapter3" type="Button" parent="HBoxContainer" unique_id=1825309058]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 520)
+layout_mode = 2
+size_flags_horizontal = 6
+script = ExtResource("3_kuypm")
+level = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/chapter3" unique_id=1357149387]
+layout_mode = 0
+offset_right = 273.0
+offset_bottom = 520.0
+texture = ExtResource("2_kuypm")
+
+[node name="Label" type="Label" parent="HBoxContainer/chapter3" unique_id=821912105]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -100.0
+offset_right = 60.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 50
+text = "Day1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="chapter4" type="Button" parent="HBoxContainer" unique_id=1822114304]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 520)
+layout_mode = 2
+size_flags_horizontal = 6
+script = ExtResource("3_kuypm")
+level = 4
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/chapter4" unique_id=472461492]
+layout_mode = 0
+offset_right = 273.0
+offset_bottom = 520.0
+texture = ExtResource("4_aduhs")
+
+[node name="Label" type="Label" parent="HBoxContainer/chapter4" unique_id=742040020]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -100.0
+offset_right = 60.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 50
+text = "Day2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="提示文字" type="Label" parent="." unique_id=2130862920]
+visible = false
+layout_mode = 0
+offset_left = 402.0
+offset_top = 40.0
+offset_right = 752.0
+offset_bottom = 129.0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 50
+text = "似乎還無法開啟"

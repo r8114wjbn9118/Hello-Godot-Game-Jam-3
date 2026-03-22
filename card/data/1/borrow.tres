@@ -7,5 +7,5 @@
 script = ExtResource("2_ae8yo")
 show_name = "借據"
 front_image = ExtResource("1_ou8oi")
-appear_action = [["set_text", "有​一​張​借據​在​裡面"], ["sleep", 1.0], ["set_text", "...​看來人​就​是​你​殺​的​"], ["sleep", 1.0], ["start_effect", "chapter_2_B_end"], ["chapter_unlock", 2]]
+appear_action = [["set_text", "有​一​張​借據​在​裡面"], ["sleep", 1.0], ["set_text", "...​看來人​就​是​你​殺​的​"], ["sleep", 1.0], ["start_effect", "chapter_2_B_end"], ["sleep", 0.5], ["chapter_unlock", 2], ["goto", "select"]]
 metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

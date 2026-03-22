@@ -1,7 +1,6 @@
 class_name ChapterScene
 extends Node2D
 
-signal update_text_finished
 signal show_card_finished
 
 @export var default_level:int
@@ -10,10 +9,6 @@ signal show_card_finished
 @onready var card_deck = %card_deck
 
 var top_card:Card = null
-
-var new_card_desc
-var update_desc_timer:float = 0.0
-var update_desc_index:int = 0
 
 var new_card_opacity = null
 
@@ -57,40 +52,16 @@ func _input(event: InputEvent) -> void:
 				Data.set_card_action(action)
 				start_exit_card()
 
-func _process(delta: float) -> void:
-	update_text(delta)
-
-func set_text(text:String):
-	update_desc_index = 0
-	update_desc_timer = 0
-
-	new_card_desc = text.split()
-	%card_desc.text = ""
-	%card_desc.modulate.a = 1
-
-func update_text(delta: float):
-	if new_card_desc:
-		update_desc_timer = (update_desc_timer + delta)
-		while update_desc_timer > new_card_udpate_interval:
-			update_desc_timer -= new_card_udpate_interval
-			%card_desc.text += new_card_desc[update_desc_index]
-			update_desc_index += 1
-			if update_desc_index >= len(new_card_desc):
-				new_card_desc = null
-				update_desc_index = 0
-				update_desc_timer = 0
-				update_text_finished.emit(self)
-
-
-
 func init():
+	Data.chapter_scene = self
+	Action.action_list_finished.connect(_on_action_list_finished)
+	
 	%background.texture = Data.current_level.background
 	
 	%left_shadow.modulate.a = 0
 	%right_shadow.modulate.a = 0
 	%left_desc.text = ""
 	%right_desc.text = ""
-	%card_desc.text = ""
 	
 	for child in card_deck.get_children():
 		child.queue_free()
@@ -98,7 +69,6 @@ func init():
 	for i in range(2):
 		var card:Card = Data.CARD.instantiate()
 		card.anim_finished.connect(_on_card_anim_finished)
-		card.action_finished.connect(_on_card_action_finished)
 		card_deck.add_child(card)
 
 func start():
@@ -138,10 +108,8 @@ func update_screen_data():
 	%right_shadow.modulate = Color(data.right_shadow_color, 0)
 	%right_desc.text = data.right_desc
 	%right_desc.modulate = Color(data.right_desc_color, 0)
-	
-	%card_desc["theme_override_colors/font_color"] = data.desc_color
-	%card_desc["theme_override_colors/font_outline_color"] = data.desc_outline_color
-	set_text(data.description)
+
+	Dialog.set_text(data.description, data.desc_color, data.desc_outline_color)
 
 func start_user_action():
 	state = STATE.USER_ACTION
@@ -164,7 +132,7 @@ func exit_card_anim(t):
 	%left_desc.modulate.a = lerp(%left_desc.modulate.a, 0.0, weight)
 	%right_shadow.modulate.a = lerp(%right_shadow.modulate.a, 0.0, weight)
 	%right_desc.modulate.a = lerp(%right_desc.modulate.a, 0.0, weight)
-	%card_desc.modulate.a = lerp(%card_desc.modulate.a, 0.0, weight)
+	Dialog.exit_card_anim(weight)
 
 func reset_top_card_pos():
 	if top_card:
@@ -175,22 +143,26 @@ func reset_top_card_pos():
 func change_card_opacity(opacity:float):
 	var tween = create_tween()
 	var new_color = Color(1,1,1,opacity)
+	printt(new_color, %card_deck.modulate)
 	tween.tween_property(%card_deck, "modulate", new_color, 1)
 	tween.tween_callback(show_card_finished.emit)
 func show_card():
-	change_card_opacity(1)
+	change_card_opacity(1.0)
 func hide_card():
-	change_card_opacity(0)
+	change_card_opacity(0.0)
 
 
 
 func _on_card_anim_finished(anim_name:String):
 	if anim_name == "open":
-		top_card.start_appear_action()
+		Data.set_card_action("appear")
+		top_card.start_action()
 
-func _on_card_action_finished(action):
-	if action == "appear":
-		update_screen_data()
-		start_user_action()
-	else:
-		next_card()
+func _on_action_list_finished():
+	if state != STATE.END:
+		if Data.card_action == "appear":
+			update_screen_data()
+			start_user_action()
+		else:
+			next_card()
+		Data.set_card_action()

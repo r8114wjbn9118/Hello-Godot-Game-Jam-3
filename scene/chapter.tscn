@@ -7,7 +7,7 @@
 
 [node name="chapter" type="Node2D" unique_id=1850809433]
 script = ExtResource("1_tfyvu")
-default_level = 2
+default_level = 3
 
 [node name="background" type="Sprite2D" parent="." unique_id=37134626]
 unique_name_in_owner = true
@@ -72,21 +72,3 @@ unique_name_in_owner = true
 position = Vector2(576, 648)
 
 [node name="card" parent="card_deck" unique_id=1395496138 instance=ExtResource("4_1egux")]
-
-[node name="card_desc" type="Label" parent="." unique_id=1140483252]
-unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 576.0
-offset_top = 528.0
-offset_right = 577.0
-offset_bottom = 583.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 40

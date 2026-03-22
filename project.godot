@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Flip The Truth"
-run/main_scene="uid://b8tvwo6als4vk"
+run/main_scene="uid://cdm17gg3qgepu"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -25,6 +25,7 @@ Data="*uid://b52amqh0eihd1"
 SaveData="*uid://bceijtroodyqm"
 Action="*uid://cberi0du6kvui"
 Effect="*uid://blroubg7uxwak"
+Dialog="*uid://cdrq7fmb2enfi"
 
 [display]
 

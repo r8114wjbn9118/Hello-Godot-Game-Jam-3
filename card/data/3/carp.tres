@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b0wargm84gx4m"]
+
+[ext_resource type="Texture2D" uid="uid://fg0hwu84odxr" path="res://image/卡牌/3/carp.png" id="1_btmur"]
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="2_5v1g6"]
+
+[resource]
+script = ExtResource("2_5v1g6")
+show_name = "與​青梅吵架"
+front_image = ExtResource("1_btmur")
+description = "「你​太​不​可​理喻​了！​我​要​回去​了」​"
+left_desc = "攔住​她"
+left_action = [["insert_card", "red"]]
+right_desc = "看着她走"
+right_action = [["show_card", false], ["sleep", 0.5], ["start_effect", "show_black"], ["sleep", 0.5], ["set_text_char_color", "A"], ["set_text", "但是... 這樣真的好嗎"], ["sleep", 2], ["set_text", ""], ["chapter_unlock", 4], ["goto", "select"]]
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

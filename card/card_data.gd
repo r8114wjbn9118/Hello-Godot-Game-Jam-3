@@ -12,7 +12,7 @@ extends Resource
 ## 敘述
 @export_multiline var description:String
 @export var desc_color:Color = Color.BLACK
-@export var desc_outline_color:Color = Color(0, 0, 0, 0)
+@export var desc_outline_color:Color = Color(1, 1, 1, 0.3)
 
 @export var appear_action:Array
 

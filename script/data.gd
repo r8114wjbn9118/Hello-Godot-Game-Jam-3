@@ -5,6 +5,7 @@ var CARD_DATA_DIR = "res://card/data"
 
 var SCENE = {
 	"title": "uid://ckymik3t54our",
+	"select": "uid://s1mfhgnatufn",
 	"chapter": "uid://b8tvwo6als4vk",
 }
 
@@ -26,6 +27,7 @@ var BACKGORUND = {
 }
 
 var current_level:Level = null
+var chapter_scene:ChapterScene
 var card_action:String = ""
 var item = []
 

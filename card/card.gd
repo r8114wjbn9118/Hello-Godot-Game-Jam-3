@@ -3,7 +3,6 @@ class_name Card
 extends Node2D
 
 signal anim_finished
-signal action_finished
 
 @export var data:CardData:
 	set(value):
@@ -21,45 +20,20 @@ func update_data():
 		%back.texture = data.back_image if data.back_image else default_back_image
 
 var is_open:bool = false
-var action_type = ""
-var action_list = []
 
 func _ready() -> void:
 	update_data()
-	Action.action_finished.connect(_on_action_finished)
-
-func init_action_data():
-	action_type = ""
-	action_list = []
-
-func can_action():
-	return not action_list.is_empty()
 
 func start_action():
-	action_type = Data.card_action
+	var action_type = Data.card_action
+	var action_list
 	if action_type == "left":
 		action_list = data.left_action.duplicate_deep()
 	elif action_type == "right":
 		action_list = data.right_action.duplicate_deep()
-	Data.set_card_action()
-	run_action()
-
-func start_appear_action():
-	action_type = "appear"
-	action_list = data.appear_action.duplicate_deep()
-	run_action()
-
-func run_action():
-	if action_type:
-		if can_action():
-			var action = action_list.pop_front()
-			Action.call(action[0], action[1])
-		else:
-			action_finished.emit(action_type)
-			init_action_data()
-
-func _on_action_finished(_action_name):
-	run_action()
+	elif action_type == "appear":
+		action_list = data.appear_action.duplicate_deep()
+	Action.start_action_list(action_type, action_list)
 
 func reset():
 	position = Vector2(0, 0)

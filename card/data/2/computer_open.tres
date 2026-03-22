@@ -10,5 +10,5 @@ show_name = "電腦"
 front_image = ExtResource("2_iu3j1")
 back_image = ExtResource("1_87jy3")
 appear_action = [["set_text", "有​一​個人​的​資料，
-​就​是​他​殺​的​嗎.​.."], ["sleep", 1.0], ["set_text", "​我​要​回到​過去​..."], ["sleep", 1.0], ["set_text", "拯救​她！​"], ["sleep", 0.5], ["start_effect", "chapter_2_B_end"], ["chapter_unlock", 3]]
+​就​是​他​殺​的​嗎.​.."], ["sleep", 1.0], ["set_text", "​我​要​回到​過去​..."], ["sleep", 1.0], ["set_text", "拯救​她！​"], ["sleep", 0.5], ["start_effect", "chapter_2_B_end"], ["sleep", 0.5], ["chapter_unlock", 3], ["goto", "select"]]
 metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

@@ -6,7 +6,7 @@ const key = "596F55466F556E4454684550615373576F526421"
 
 var repo:ConfigFile = null
 
-var unlock_chapter = {}
+var unlock_chapter = {1:true}
 
 func _ready() -> void:
 	repo = ConfigFile.new()
@@ -26,6 +26,7 @@ func get_data():
 
 func set_data(_data):
 	unlock_chapter = _data
+	print(unlock_chapter)
 
 
 

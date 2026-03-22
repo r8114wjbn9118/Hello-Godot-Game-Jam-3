@@ -11,8 +11,9 @@ var used_card = []
 
 var item = []
 
-func init(n):
-	level_number = n
+func init(n = null):
+	if n:
+		level_number = n
 	
 	card_list = card_deck.duplicate_deep();
 	card_list.reverse()

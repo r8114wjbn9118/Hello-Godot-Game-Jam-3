@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cdrq7fmb2enfi"]
+
+[ext_resource type="Script" uid="uid://b7jvf5ale3qjr" path="res://script/dialog.gd" id="1_up5xw"]
+
+[node name="Dialog" type="Control" unique_id=1546111449]
+z_index = 2000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_up5xw")
+
+[node name="text" type="Label" parent="." unique_id=1088681593]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 204.0
+offset_right = 1.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 40

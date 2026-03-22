@@ -1,9 +1,34 @@
-[gd_scene format=3 uid="uid://ckymik3t54our"]
+[gd_scene format=3 uid="uid://cdm17gg3qgepu"]
 
-[node name="Title" type="Control" unique_id=1680176084]
+[ext_resource type="Script" uid="uid://cnos1w8ur4i0t" path="res://script/title.gd" id="1_hr6ky"]
+[ext_resource type="Texture2D" uid="uid://0107okd12bm5" path="res://image/bakground/start.png" id="2_0npwg"]
+
+[node name="Title" type="Control" unique_id=1730768748]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 0
+script = ExtResource("1_hr6ky")
+
+[node name="background" type="TextureRect" parent="." unique_id=739904091]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0npwg")
+
+[node name="start game" type="Button" parent="." unique_id=60411133]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 474.0
+offset_top = 418.0
+offset_right = 679.0
+offset_bottom = 510.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "開始遊戲"
+
+[connection signal="button_up" from="start game" to="." method="_on_start_game_button_up"]

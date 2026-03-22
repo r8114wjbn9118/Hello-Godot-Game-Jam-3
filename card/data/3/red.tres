@@ -14,4 +14,5 @@ height = 2451
 [resource]
 script = ExtResource("1_1xpi2")
 front_image = SubResource("GradientTexture2D_qrd0j")
+appear_action = [["sleep", 0.5], ["start_effect", "chapter_3_A_dead"], ["set_text_color", Color(1, 0, 0, 1)], ["set_text_outline_color", Color(0, 0, 0, 1)], ["set_text", "我... 要死了嗎"], ["sleep", 2.0], ["set_text_size", 80], ["set_text", "不！"], ["sleep", 2.0], ["set_text", ""], ["chapter_restart", null]]
 metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"
