@@ -15,14 +15,12 @@ func init_action_data():
 
 
 func start_action_list(type:String, list:Array = []):
-	printt(type, list)
 	action_type = type
 	action_list = list
 
 	run_action_list()
 
 func run_action_list():
-	printt(action_type, action_list)
 	if action_type:
 		if not action_list.is_empty():
 			var action = action_list.pop_front()
@@ -122,6 +120,10 @@ func set_text_size(size = null):
 		size = null
 	Dialog.set_text_size(size)
 	action_finish("set_text_size")
+
+func set_text_default(_arg):
+	Dialog.set_default()
+	action_finish("set_text_default")
 
 
 

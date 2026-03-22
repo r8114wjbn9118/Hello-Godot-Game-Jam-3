@@ -35,6 +35,10 @@ func init():
 	update_timer = 0.0
 	update_index = 0
 
+func set_default():
+	set_text("")
+	set_text_size(default_text_size)
+
 func set_color(color):
 	%text["theme_override_colors/font_color"] = color if color is Color else default_color
 func set_outline_color(color):

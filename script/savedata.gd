@@ -26,7 +26,6 @@ func get_data():
 
 func set_data(_data):
 	unlock_chapter = _data
-	print(unlock_chapter)
 
 
 
