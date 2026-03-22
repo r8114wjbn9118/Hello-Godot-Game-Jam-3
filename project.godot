@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 Data="*uid://b52amqh0eihd1"
 SaveData="*uid://bceijtroodyqm"
 Action="*uid://cberi0du6kvui"
+Effect="*uid://blroubg7uxwak"
 
 [physics]
 

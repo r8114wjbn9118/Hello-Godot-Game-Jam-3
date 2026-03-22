@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://citga58l7qqst"]
+
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="1_ar0n7"]
+[ext_resource type="Resource" uid="uid://dkopvtr2flwth" path="res://card/data/2/deadbody.tres" id="2_ar0n7"]
+[ext_resource type="Script" uid="uid://u17nhqahhlyt" path="res://level/base.gd" id="3_18lve"]
+
+[resource]
+script = ExtResource("3_18lve")
+card_deck = Array[ExtResource("1_ar0n7")]([ExtResource("2_ar0n7")])
+metadata/_custom_type_script = "uid://u17nhqahhlyt"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b0wargm84gx4m"]
+
+[ext_resource type="Texture2D" uid="uid://b7e8uy83di4wi" path="res://image/卡牌/1/deadbody.png" id="1_e55sk"]
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="1_wf82b"]
+
+[resource]
+script = ExtResource("1_wf82b")
+show_name = "與​青梅吵架"
+front_image = ExtResource("1_e55sk")
+description = "「你​太​不​可​理喻​了！​我​要​回去​了」​"
+left_desc = "攔住​她"
+left_action = {
+"insert_card": "red"
+}
+right_desc = "看着她走"
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

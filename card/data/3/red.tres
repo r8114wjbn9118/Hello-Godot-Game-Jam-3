@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://deu85e8k51nxd"]
+
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="1_1xpi2"]
+
+[sub_resource type="Gradient" id="Gradient_frxtg"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qrd0j"]
+gradient = SubResource("Gradient_frxtg")
+width = 1719
+
+[resource]
+script = ExtResource("1_1xpi2")
+front_image = SubResource("GradientTexture2D_qrd0j")
+appear_action = {
+"start_effect": "chapter_3_A_dead"
+}
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

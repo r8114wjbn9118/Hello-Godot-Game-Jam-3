@@ -1,22 +1,91 @@
 [gd_scene format=3 uid="uid://b8tvwo6als4vk"]
 
 [ext_resource type="Script" uid="uid://dax3qdack5poc" path="res://script/scene.gd" id="1_tfyvu"]
-[ext_resource type="Resource" uid="uid://cfy8vvcqdcn5j" path="res://level/1.tres" id="2_b8a8a"]
+[ext_resource type="Texture2D" uid="uid://ck2oufnyewa52" path="res://image/shadow_circle.png" id="3_tfyvu"]
 [ext_resource type="Texture2D" uid="uid://bwjmaub57wbdx" path="res://image/bakground/date.png" id="3_vyjpp"]
 [ext_resource type="PackedScene" uid="uid://cev16g6q6uawh" path="res://card/card_base.tscn" id="4_1egux"]
 
 [node name="chapter" type="Node2D" unique_id=1850809433]
 script = ExtResource("1_tfyvu")
-level = ExtResource("2_b8a8a")
+default_level = 1
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=645687632]
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="background" type="Sprite2D" parent="." unique_id=37134626]
+unique_name_in_owner = true
+position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_vyjpp")
+
+[node name="left_effect" type="Node2D" parent="." unique_id=1487107368]
+
+[node name="left_shadow" type="Sprite2D" parent="left_effect" unique_id=674477919]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 324)
+texture = ExtResource("3_tfyvu")
+
+[node name="left_desc" type="Label" parent="left_effect" unique_id=1781586971]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 500.0
+offset_right = 300.0
+offset_bottom = 650.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.7853982
+theme_override_font_sizes/font_size = 40
+text = "qwerqwerqwer
+asdfasdfsadf"
+
+[node name="right_effect" type="Node2D" parent="." unique_id=1453170200]
+
+[node name="right_shadow" type="Sprite2D" parent="right_effect" unique_id=1138926891]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 0)
+position = Vector2(1152, 324)
+texture = ExtResource("3_tfyvu")
+
+[node name="right_desc" type="Label" parent="right_effect" unique_id=1186155386]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 928.0
+offset_top = 275.0
+offset_right = 1228.0
+offset_bottom = 425.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.7853982
+theme_override_font_sizes/font_size = 40
+text = "qwerqwerqwer
+asdfasdfsadf"
+horizontal_alignment = 2
 
 [node name="card_deck" type="Node2D" parent="." unique_id=264454229]
 unique_name_in_owner = true
 position = Vector2(576, 648)
 
 [node name="card" parent="card_deck" unique_id=1395496138 instance=ExtResource("4_1egux")]
+
+[node name="card_desc" type="Label" parent="." unique_id=1140483252]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 426.0
+offset_top = 498.0
+offset_right = 726.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "qwerqwerqwer
+asdfasdfsadf"

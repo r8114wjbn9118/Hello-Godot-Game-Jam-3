@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://cmt1rmakmummo" path="res://card/card.gd" id="1_qrd0j"]
 [ext_resource type="Texture2D" uid="uid://cm2bxk4uku4cl" path="res://image/卡牌/backtime.png" id="3_petnn"]
 
+[sub_resource type="Gradient" id="Gradient_frxtg"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qrd0j"]
+gradient = SubResource("Gradient_frxtg")
+width = 1719
+
 [sub_resource type="Animation" id="Animation_70p1f"]
 length = 0.001
 tracks/0/type = "value"
@@ -149,6 +157,7 @@ scale = Vector2(0.167, 0.167)
 [node name="front" type="Polygon2D" parent="Node2D/image" unique_id=2107863810]
 unique_name_in_owner = true
 scale = Vector2(1e-05, 1)
+texture = SubResource("GradientTexture2D_qrd0j")
 polygon = PackedVector2Array(0, 0, 1719, 0, 1719, 2451, 0, 2451)
 uv = PackedVector2Array(0, 0, 1719, 0, 1719, 2451, 0, 2451)
 

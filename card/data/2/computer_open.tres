@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://ct3p22pb8busx"]
+
+[ext_resource type="Texture2D" uid="uid://cm2bxk4uku4cl" path="res://image/卡牌/backtime.png" id="1_87jy3"]
+[ext_resource type="Texture2D" uid="uid://cmvgav1wjhrkt" path="res://image/卡牌/1/computer.png" id="2_iu3j1"]
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="3_r56nf"]
+
+[resource]
+script = ExtResource("3_r56nf")
+show_name = "電腦"
+front_image = ExtResource("2_iu3j1")
+back_image = ExtResource("1_87jy3")
+description = "有​一​個人​的​資料，
+​就​是​他​殺​的​嗎.​.."
+left_desc = "算​了​吧(​離​開)"
+left_action = {
+"back_last_card": null
+}
+right_desc = "調查​一下​電腦​"
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

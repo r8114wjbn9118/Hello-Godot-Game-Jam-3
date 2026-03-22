@@ -27,13 +27,7 @@ func chapter_unlock(n:int):
 	return false
 
 func chapter_restart(n:int = 0):
-	var level = Data.LEVEL.get(n)
-	if level:
-		Data.set_level(level)
-		return true
-	else:
-		printerr("Level {0} not exists".format(n))
-		return false
+	return Data.set_level(n)
 
 
 
@@ -41,23 +35,40 @@ func set_text(text:String):
 	pass
 
 func set_backgorund(target:String):
-	pass
+	var image_path = Data.BACKGORUND.get(target)
+	if image_path and ResourceLoader.exists(image_path):
+		var background_node = get_tree().current_scene.get_node("%background")
+		if background_node:
+			background_node = load(image_path)
+		
 
 func start_effect(target:String):
-	pass
+	Effect.call(target)
 
 
 
 func insert_card(target:String):
-	pass
+	Data.current_level.insert_card(target)
+
+func back_last_card(_t):
+	Data.current_level.back_last_card()
 
 
+
+func exist_item(target):
+	return target in Data.item
 
 func add_item(target):
-	pass
+	if not exist_item(target):
+		Data.item.append(target)
+		return true
+	return false
 
 func remove_item(target):
-	pass
+	if exist_item(target):
+		Data.item.erase(target)
+
+
 
 func console(s):
 	print(s)

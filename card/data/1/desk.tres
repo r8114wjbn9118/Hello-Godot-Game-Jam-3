@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c0fix1bwnt0ts"]
+
+[ext_resource type="Texture2D" uid="uid://gf10132x14lj" path="res://image/卡牌/1/desk.png" id="1_m0ro1"]
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="2_hajy8"]
+
+[resource]
+script = ExtResource("2_hajy8")
+show_name = "抽屜"
+front_image = ExtResource("1_m0ro1")
+description = "這​是​她​的​桌子，
+​​也​許能​在​這裡​找到​一些​線索​"
+left_desc = "算​了​吧(​離​開)"
+left_action = {
+"back_last_card": null
+}
+right_desc = "調查​一下抽屜​"
+right_action = {
+"insert_card": "borrow"
+}
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

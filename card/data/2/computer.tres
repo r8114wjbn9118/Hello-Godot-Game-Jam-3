@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bjsg5emaiic1c"]
+
+[ext_resource type="Texture2D" uid="uid://cm2bxk4uku4cl" path="res://image/卡牌/backtime.png" id="1_aul3f"]
+[ext_resource type="Texture2D" uid="uid://cmvgav1wjhrkt" path="res://image/卡牌/1/computer.png" id="2_ccob1"]
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="3_f22jy"]
+
+[resource]
+script = ExtResource("3_f22jy")
+show_name = "電腦"
+front_image = ExtResource("2_ccob1")
+back_image = ExtResource("1_aul3f")
+description = "這​是​她​的​電腦，​是​解鎖​的​狀態，
+​或​許能​找到​一些​蛛絲​馬跡 "
+left_desc = "算​了​吧(​離​開)"
+left_action = {
+"back_last_card": null
+}
+right_desc = "調查​一下​電腦​"
+right_action = {
+"insert_card": "computer_open"
+}
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

@@ -3,6 +3,7 @@ class_name Card
 extends Node2D
 
 signal anim_finished
+signal action_finished
 
 @export var data:CardData:
 	set(value):
@@ -28,27 +29,26 @@ var current_state:STATE = STATE.CLOSE
 func _ready() -> void:
 	update_data()
 
-func can_start_left():
-	return true
-
-func can_start_right():
-	return true
+func can_action(action_dict:Dictionary):
+	return not action_dict.is_empty()
 
 func start_action():
-	var d = Data.card_action
-	printt(d, self)
-	if d == 0:
-		return false
+	var action = Data.card_action
+	if action == "left":
+		run_action(data.left_action)
+	elif action == "right":
+		run_action(data.right_action)
+	Data.set_card_action()
+	action_finished.emit(action)
 
-	var action_dict:Dictionary
-	if d < 0:
-		action_dict = data.left_action
-	elif d > 0:
-		action_dict = data.right_action
-	print(action_dict)
+func start_appear_action():
+	run_action(data.appear_action)
+	action_finished.emit("appear")
 
-	for action in action_dict.keys():
-		Action.call(action, action_dict.get(action))
+func run_action(action_dict:Dictionary):
+	if can_action(action_dict):
+		for action in action_dict.keys():
+			Action.call(action, action_dict.get(action))
 
 func reset():
 	position = Vector2(0, 0)

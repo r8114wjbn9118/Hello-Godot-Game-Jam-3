@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c85vigknp6evn"]
+
+[ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="1_6l0ur"]
+[ext_resource type="Texture2D" uid="uid://c4v2dmuiubv4d" path="res://image/卡牌/1/bear.png" id="1_bie20"]
+
+[resource]
+script = ExtResource("1_6l0ur")
+show_name = "泰迪​"
+front_image = ExtResource("1_bie20")
+description = "有​她​最愛​的​泰迪​"
+left_desc = "返回"
+left_action = {
+"insert_card": "deadbody"
+}
+right_desc = "返回"
+right_action = {
+"insert_card": "deadbody"
+}
+metadata/_custom_type_script = "uid://d0ghi1r6fyjl4"

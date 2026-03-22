@@ -2,13 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d0ghi1r6fyjl4" path="res://card/card_data.gd" id="1_n31sv"]
 [ext_resource type="Script" uid="uid://u17nhqahhlyt" path="res://level/base.gd" id="1_ttofe"]
-[ext_resource type="Resource" uid="uid://bpgbudqqlty1y" path="res://card/data/bed.tres" id="2_kkwb8"]
-[ext_resource type="Resource" uid="uid://c0fix1bwnt0ts" path="res://card/data/drawer.tres" id="3_828ca"]
-[ext_resource type="Resource" uid="uid://b0wargm84gx4m" path="res://card/data/quarrel.tres" id="4_4glwd"]
-[ext_resource type="Resource" uid="uid://bjsg5emaiic1c" path="res://card/data/computer.tres" id="5_stoc2"]
-[ext_resource type="Resource" uid="uid://ba06kauqgthjh" path="res://card/data/deadbody.tres" id="6_xhy6x"]
+[ext_resource type="Resource" uid="uid://ba06kauqgthjh" path="res://card/data/1/deadbody.tres" id="6_xhy6x"]
 
 [resource]
 script = ExtResource("1_ttofe")
-card_deck = Array[ExtResource("1_n31sv")]([ExtResource("2_kkwb8"), ExtResource("3_828ca"), ExtResource("4_4glwd"), ExtResource("5_stoc2"), ExtResource("6_xhy6x"), null])
+card_deck = Array[ExtResource("1_n31sv")]([ExtResource("6_xhy6x")])
 metadata/_custom_type_script = "uid://u17nhqahhlyt"
